@@ -1,0 +1,28 @@
+#!/bin/sh
+#----------AUTHOR------------
+	# Will Pierce
+	# 140801
+
+## is there a waiting room?
+if [ -d /Library/Application\ Support/JAMF/Waiting\ Room ];then
+### YES there a waiting room
+#### Get list of pkg waiting
+result=`/bin/ls -1 /Library/Application\ Support/JAMF/Waiting\ Room/ 2> /dev/null | /usr/bin/grep -v ".cache.xml"`
+##### Are pkgs waiting?
+###### No pkgs waiting?
+if [ "$result" == "" ];then
+echo "<result>No packages</result>"
+####### Remove the waitingRoom.txt file
+rm /Users/Shared/waitingRoom.txt
+else
+## YES pkgs waiting?
+echo "<result>$result</result>"
+### Create the waitingRoom.txt so the geeklet can read it.
+echo $result > /Users/Shared/waitingRoom.txt
+fi
+else
+## No there is NOT a waiting room
+echo "<result>No waiting room</result>"
+fi
+
+exit 0
