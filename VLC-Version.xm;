@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extensionAttribute>
+<displayName>VLC-Version</displayName>
+<description>Checks if VLC is installed, if it’s not it returns the message not installed, if it is installed it returns the version number.
+</description>
+<dataType>string</dataType>
+<scriptContentsMac>
+#!/bin/sh
+if [ -e /Applications/VLC.app/ ]; then
+result="$(defaults read /Applications/VLC.app/Contents/Info.plist CFBundleVersion)"
+echo "<result>$result</result>"
+else
+echo "<result>Not installed</result>"
+fi
+</scriptContentsMac>
+
+</extensionAttribute>
