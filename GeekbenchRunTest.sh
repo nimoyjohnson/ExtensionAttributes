@@ -15,4 +15,4 @@ the_date=`date "+%Y-%m-%d"`
 ## switch to an admin user!
 sudo -u macroot /Applications/Utilities/Geekbench\ 3.app/Contents/Resources/geekbench --benchmark --arch 64 --export-text /Users/Shared/Geekbench/GeekbenchScore_$the_date.txt --no-upload 
 
-exit 0s
+exit 0
