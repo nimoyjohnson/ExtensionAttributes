@@ -3,7 +3,8 @@
 #### Run geekbench from the command line
 #### Will Pierce
 #### August 21, 2014
-
+## See: https://github.com/quedayone/ExtensionAttributes/blob/master/GeekbenchLastScore.sh
+## to retrieve the test score
 ## set the perms on the Geekbench folder
 chmod -R 777 /Users/Shared/Geekbench
 
@@ -11,6 +12,7 @@ chmod -R 777 /Users/Shared/Geekbench
 the_date=`date "+%Y-%m-%d"`
 
 ## Geekbench command to run the test and save the score in /Users/Shared/Geekbench folder with name GeekbenchScore2014xxxx.txt
+## switch to an admin user!
 sudo -u macroot /Applications/Utilities/Geekbench\ 3.app/Contents/Resources/geekbench --benchmark --arch 64 --export-text /Users/Shared/Geekbench/GeekbenchScore_$the_date.txt --no-upload 
 
-exit 0
+exit 0s
