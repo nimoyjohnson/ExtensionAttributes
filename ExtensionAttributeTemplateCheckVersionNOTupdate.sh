@@ -1,5 +1,5 @@
 #!/bin/bash
-### Extension Attribute Template to check the version number of an application 
+### JSS Extension Attribute Template to check the version number of an application 
 ### And set it to NOT update or prompt to update.
  
 ############### Make changes below
@@ -19,7 +19,7 @@ type=
 value=
 ## example: YES
 
-############### DO NOT CHANGE below
+############### DO NOT CHANGE below eh!
 
 ## Set a variable that takes the output of the current console owner and cut the result down
 user=`ls -l /dev/console | cut -d " " -f 4`
