@@ -1,5 +1,9 @@
 #!/bin/bash
+<<<<<<< HEAD
 ### JSS Extension Attribute Template to check the version number of an application 
+=======
+### Extension Attribute Template to check the version number of an application 
+>>>>>>> FETCH_HEAD
 ### And set it to NOT update or prompt to update.
  
 ############### Make changes below
@@ -19,7 +23,11 @@ type=
 value=
 ## example: YES
 
+<<<<<<< HEAD
 ############### DO NOT CHANGE below eh!
+=======
+############### DO NOT CHANGE below
+>>>>>>> FETCH_HEAD
 
 ## Set a variable that takes the output of the current console owner and cut the result down
 user=`ls -l /dev/console | cut -d " " -f 4`
@@ -40,4 +48,8 @@ IntVersion="9999999999"
 fi
 ## pass version number to the JSS Extension Attribute
 echo "<result>$IntVersion</result>"
+<<<<<<< HEAD
 exit 0
+=======
+exit 0
+>>>>>>> FETCH_HEAD
