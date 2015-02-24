@@ -11,18 +11,21 @@
 
 ### JSS Extension Attribute Template to check the version number of an application 
 ### And set it to NOT update or prompt to update.
-### Will Pierce DATE
+### Will Pierce February 24, 2015
+### updated February 24, 2015
+### Now using PlistBuddy 
 
+PlistBuddy=/usr/libexec/PlistBuddy
 ############### Make changes below
 
-app=
+app=SketchUp\ 2015/SketchUp.app/
 ## example: iTunes.app 
 ## If app has spaces do NOT use \ for them. Example [ Remote Desktop.app ]
 
-pref=
+pref=com.sketchup.SketchUp.2015.plist
 ## For the do not update command example: com.apple.iTunes.plist
 
-key=
+key=CheckForUpdates
 ## examples: disableCheckForUpdates SUEnableAutomaticChecks
 
 type=
@@ -41,10 +44,12 @@ if [ -e /Applications/$app ]; then
 echo $app installed 						# comment out or remove after testing
 echo Now set $app to NOT check for updates 	# comment out or remove after testing
 
-sudo -u ${user} defaults write $pref $key -$type $value
+# sudo -u ${user} defaults write $pref $key -$type $value
+sudo -u ${user} PlistBuddy -c "Set :$key $value" /User/$user/Library/Preferences/$pref
 echo Defaults should now be set
 ## Create a var for autoUpdate so we can see if this all works
-autoUpdate=`sudo -u ${user} defaults read $pref $key`
+# autoUpdate=`sudo -u ${user} defaults read $pref $key`
+autoUpdate=`sudo -u ${user} PlistBuddy -c "Print :$key" /User/$user/Library/Preferences/$pref
 
 echo $pref $key is set to $autoUpdate
 
