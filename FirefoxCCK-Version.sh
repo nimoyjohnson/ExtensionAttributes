@@ -9,7 +9,7 @@
 # Data Type: integer 
 # Inventory Display: Extension Attributes
 
-### JSS Extension Attribute Template to check for Firefox CCK install 
+### JSS Extension Attribute to check for installed version of Firefox CCK  
 ### Will Pierce February 26, 2015
 ### Updated February 26, 2015
 
