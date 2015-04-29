@@ -1,0 +1,16 @@
+#!/bin/bash
+#### Will Pierce
+#### August 7, 2014
+#### JSS Extension Attribute
+#### Display Name - ScreenSaver-Idletime-Min
+#### Description - When will the Screen Saver kick in?
+#### Data Type - String
+#### Inventory Display - OS
+#### Input Type - Script
+
+#Get current user
+user=`ls -l /dev/console | cut -d " " -f 4`
+
+Screensaveridletime=`sudo -u $user defaults -currentHost read com.apple.screensaver idleTime`
+
+echo "<result>$(( $Screensaveridletime / 60 ))</result>"
