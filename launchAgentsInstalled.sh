@@ -18,10 +18,10 @@ result=`ls /Users/$user/Library/LaunchAgents/ | sed -e 's/.plist//' -e 's/com.//
 # Test to see if there are any LaunchAgents installed installed if not report as "none"
 
 if [ -n "$result" ]; then
-	# Extensions found
+	# LaunchAgents found
 	:
 else
-	# No extensions found
+	# No LaunchAgents found
 	result="None"
 fi
 echo "<result>$result</result>"
