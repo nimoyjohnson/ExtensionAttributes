@@ -80,7 +80,7 @@ echo $thePrefs $updatesKey is set to $autoUpdate	# comment out or remove after t
 
 # Get the version of the app
 Version="$(defaults read /Applications/"$app"/Contents/Info.plist $versionNumKey)"
-
+ 
 echo $app version is $Version 			# comment out or remove after testing
 
 ##Convert Version to integer
@@ -96,5 +96,5 @@ fi
 ## pass version number to the JSS Extension Attribute
 echo "<result>$IntVersion</result>"
 # read in the users defaults to update the GUI
-sudo -u $user defaults read
+sudo -u $user defaults read $pref
 exit 0

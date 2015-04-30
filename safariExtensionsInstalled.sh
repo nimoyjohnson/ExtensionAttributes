@@ -16,7 +16,7 @@ user=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; 
 # Set var for the result so we can report it to the JSS 
 result=`ls /Users/$user/Library/Safari/Extensions | sed -e '/Extensions.plist/d' -e 's/\.[^\.]*$//'`
 
-# Test to see if there are any extensions installed if not report as "none"
+# Check to see if there are any extensions installed if not report as "none"
 
 if [ -n "$result" ]; then
 	# Extensions found
